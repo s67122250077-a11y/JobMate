@@ -1,0 +1,3041 @@
+{
+  "metadata": {
+    "project": "JobMate",
+    "description": "Firebase Realtime Database import dataset for coursework and testing",
+    "created_date": "2026-10-20",
+    "record_counts": {
+      "users": 30,
+      "companies": 30,
+      "categories": 8,
+      "skills": 30,
+      "jobs": 50,
+      "applications": 50,
+      "saved_jobs": 40,
+      "data_sources": 1
+    },
+    "important_notes": [
+      "ข้อมูลผู้ใช้ บริษัท งาน สมัครงาน และบันทึกงานในไฟล์นี้เป็นข้อมูลจำลองเพื่อการทดสอบ",
+      "ห้ามใช้รหัสผ่านตัวอย่างในระบบจริง; ระบบจริงควรใช้ Firebase Authentication และไม่จัดเก็บรหัสผ่านแบบ plaintext ใน Realtime Database",
+      "งานกำหนดให้บันทึกแหล่งข้อมูลจริงของ Job พร้อม URL และวันที่เข้าถึง; SRC001 เป็น placeholder สำหรับข้อมูลจำลอง",
+      "โครงสร้าง companies, categories, skills, saved_jobs และ data_sources เป็นการขยายตามหัวข้อข้อมูลที่เอกสาร Assignment 4 ระบุ"
+    ]
+  },
+  "users": {
+    "U001": {
+      "user_id": "U001",
+      "name": "กิตติ ใจดี",
+      "email": "user001@example.com",
+      "password": "DEMO_ONLY_change_me_001",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_001_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user001",
+      "github_url": "https://github.com/demo-user001"
+    },
+    "U002": {
+      "user_id": "U002",
+      "name": "ณัฐพล แสงทอง",
+      "email": "user002@example.com",
+      "password": "DEMO_ONLY_change_me_002",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_002_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user002",
+      "github_url": "https://github.com/demo-user002"
+    },
+    "U003": {
+      "user_id": "U003",
+      "name": "ธนกฤต วัฒนชัย",
+      "email": "user003@example.com",
+      "password": "DEMO_ONLY_change_me_003",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_003_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user003",
+      "github_url": "https://github.com/demo-user003"
+    },
+    "U004": {
+      "user_id": "U004",
+      "name": "พีรพัฒน์ บุญมี",
+      "email": "user004@example.com",
+      "password": "DEMO_ONLY_change_me_004",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_004_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user004",
+      "github_url": "https://github.com/demo-user004"
+    },
+    "U005": {
+      "user_id": "U005",
+      "name": "ปกรณ์ ศรีสุข",
+      "email": "user005@example.com",
+      "password": "DEMO_ONLY_change_me_005",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_005_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user005",
+      "github_url": "https://github.com/demo-user005"
+    },
+    "U006": {
+      "user_id": "U006",
+      "name": "วรเมธ ตั้งมั่น",
+      "email": "user006@example.com",
+      "password": "DEMO_ONLY_change_me_006",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_006_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user006",
+      "github_url": "https://github.com/demo-user006"
+    },
+    "U007": {
+      "user_id": "U007",
+      "name": "ภัทร สุขเกษม",
+      "email": "user007@example.com",
+      "password": "DEMO_ONLY_change_me_007",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_007_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user007",
+      "github_url": "https://github.com/demo-user007"
+    },
+    "U008": {
+      "user_id": "U008",
+      "name": "ชยพล วงศ์สวัสดิ์",
+      "email": "user008@example.com",
+      "password": "DEMO_ONLY_change_me_008",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_008_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user008",
+      "github_url": "https://github.com/demo-user008"
+    },
+    "U009": {
+      "user_id": "U009",
+      "name": "สิรภพ อินทร์แก้ว",
+      "email": "user009@example.com",
+      "password": "DEMO_ONLY_change_me_009",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_009_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user009",
+      "github_url": "https://github.com/demo-user009"
+    },
+    "U010": {
+      "user_id": "U010",
+      "name": "ภูมิ เจริญผล",
+      "email": "user010@example.com",
+      "password": "DEMO_ONLY_change_me_010",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_010_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user010",
+      "github_url": "https://github.com/demo-user010"
+    },
+    "U011": {
+      "user_id": "U011",
+      "name": "อรทัย มีทรัพย์",
+      "email": "user011@example.com",
+      "password": "DEMO_ONLY_change_me_011",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_011_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user011",
+      "github_url": "https://github.com/demo-user011"
+    },
+    "U012": {
+      "user_id": "U012",
+      "name": "พิมพ์ชนก พูนเพิ่ม",
+      "email": "user012@example.com",
+      "password": "DEMO_ONLY_change_me_012",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_012_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user012",
+      "github_url": "https://github.com/demo-user012"
+    },
+    "U013": {
+      "user_id": "U013",
+      "name": "ณิชา คงดี",
+      "email": "user013@example.com",
+      "password": "DEMO_ONLY_change_me_013",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_013_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user013",
+      "github_url": "https://github.com/demo-user013"
+    },
+    "U014": {
+      "user_id": "U014",
+      "name": "กมลชนก ประเสริฐ",
+      "email": "user014@example.com",
+      "password": "DEMO_ONLY_change_me_014",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_014_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user014",
+      "github_url": "https://github.com/demo-user014"
+    },
+    "U015": {
+      "user_id": "U015",
+      "name": "ศิริพร สมบูรณ์",
+      "email": "user015@example.com",
+      "password": "DEMO_ONLY_change_me_015",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_015_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user015",
+      "github_url": "https://github.com/demo-user015"
+    },
+    "U016": {
+      "user_id": "U016",
+      "name": "ชลธิชา ใจดี",
+      "email": "user016@example.com",
+      "password": "DEMO_ONLY_change_me_016",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_016_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user016",
+      "github_url": "https://github.com/demo-user016"
+    },
+    "U017": {
+      "user_id": "U017",
+      "name": "ปวีณ์ แสงทอง",
+      "email": "user017@example.com",
+      "password": "DEMO_ONLY_change_me_017",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_017_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user017",
+      "github_url": "https://github.com/demo-user017"
+    },
+    "U018": {
+      "user_id": "U018",
+      "name": "ธัญชนก วัฒนชัย",
+      "email": "user018@example.com",
+      "password": "DEMO_ONLY_change_me_018",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_018_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user018",
+      "github_url": "https://github.com/demo-user018"
+    },
+    "U019": {
+      "user_id": "U019",
+      "name": "มนัสวี บุญมี",
+      "email": "user019@example.com",
+      "password": "DEMO_ONLY_change_me_019",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_019_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user019",
+      "github_url": "https://github.com/demo-user019"
+    },
+    "U020": {
+      "user_id": "U020",
+      "name": "กัญญารัตน์ ศรีสุข",
+      "email": "user020@example.com",
+      "password": "DEMO_ONLY_change_me_020",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_020_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user020",
+      "github_url": "https://github.com/demo-user020"
+    },
+    "U021": {
+      "user_id": "U021",
+      "name": "ธีรภัทร ตั้งมั่น",
+      "email": "user021@example.com",
+      "password": "DEMO_ONLY_change_me_021",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_021_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user021",
+      "github_url": "https://github.com/demo-user021"
+    },
+    "U022": {
+      "user_id": "U022",
+      "name": "ปุณณภพ สุขเกษม",
+      "email": "user022@example.com",
+      "password": "DEMO_ONLY_change_me_022",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_022_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user022",
+      "github_url": "https://github.com/demo-user022"
+    },
+    "U023": {
+      "user_id": "U023",
+      "name": "รินรดา วงศ์สวัสดิ์",
+      "email": "user023@example.com",
+      "password": "DEMO_ONLY_change_me_023",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_023_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user023",
+      "github_url": "https://github.com/demo-user023"
+    },
+    "U024": {
+      "user_id": "U024",
+      "name": "ชนากานต์ อินทร์แก้ว",
+      "email": "user024@example.com",
+      "password": "DEMO_ONLY_change_me_024",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_024_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user024",
+      "github_url": "https://github.com/demo-user024"
+    },
+    "U025": {
+      "user_id": "U025",
+      "name": "พัชราภา เจริญผล",
+      "email": "user025@example.com",
+      "password": "DEMO_ONLY_change_me_025",
+      "role": "Applicant",
+      "profile_image": "images/profile/user_025_profile.webp",
+      "portfolio_url": "https://portfolio.example.com/user025",
+      "github_url": "https://github.com/demo-user025"
+    },
+    "U026": {
+      "user_id": "U026",
+      "name": "วรัญญา มีทรัพย์",
+      "email": "user026@example.com",
+      "password": "DEMO_ONLY_change_me_026",
+      "role": "Employer",
+      "profile_image": "images/profile/user_026_profile.webp",
+      "portfolio_url": "",
+      "github_url": ""
+    },
+    "U027": {
+      "user_id": "U027",
+      "name": "ศุภณัฐ พูนเพิ่ม",
+      "email": "user027@example.com",
+      "password": "DEMO_ONLY_change_me_027",
+      "role": "Employer",
+      "profile_image": "images/profile/user_027_profile.webp",
+      "portfolio_url": "",
+      "github_url": ""
+    },
+    "U028": {
+      "user_id": "U028",
+      "name": "อธิชา คงดี",
+      "email": "user028@example.com",
+      "password": "DEMO_ONLY_change_me_028",
+      "role": "Employer",
+      "profile_image": "images/profile/user_028_profile.webp",
+      "portfolio_url": "",
+      "github_url": ""
+    },
+    "U029": {
+      "user_id": "U029",
+      "name": "ณัฐวุฒิ ประเสริฐ",
+      "email": "user029@example.com",
+      "password": "DEMO_ONLY_change_me_029",
+      "role": "Employer",
+      "profile_image": "images/profile/user_029_profile.webp",
+      "portfolio_url": "",
+      "github_url": ""
+    },
+    "U030": {
+      "user_id": "U030",
+      "name": "กฤติน สมบูรณ์",
+      "email": "user030@example.com",
+      "password": "DEMO_ONLY_change_me_030",
+      "role": "Employer",
+      "profile_image": "images/profile/user_030_profile.webp",
+      "portfolio_url": "",
+      "github_url": ""
+    }
+  },
+  "companies": {
+    "C001": {
+      "company_id": "C001",
+      "company_name": "สยามดิจิทัลโซลูชัน",
+      "industry": "Software Development",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 01 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "กรุงเทพมหานคร",
+      "website": "https://company001.example.com",
+      "logo": "images/company/company_001_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C002": {
+      "company_id": "C002",
+      "company_name": "บลูโอเชียนเทค",
+      "industry": "IT Services",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 02 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "นนทบุรี",
+      "website": "https://company002.example.com",
+      "logo": "images/company/company_002_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C003": {
+      "company_id": "C003",
+      "company_name": "เน็กซ์เวฟซอฟต์แวร์",
+      "industry": "FinTech",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 03 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "เชียงใหม่",
+      "website": "https://company003.example.com",
+      "logo": "images/company/company_003_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C004": {
+      "company_id": "C004",
+      "company_name": "โค้ดคราฟต์สตูดิโอ",
+      "industry": "E-commerce",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 04 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "ขอนแก่น",
+      "website": "https://company004.example.com",
+      "logo": "images/company/company_004_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C005": {
+      "company_id": "C005",
+      "company_name": "ไบรท์ฟิวเจอร์เทค",
+      "industry": "Digital Agency",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 05 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "ชลบุรี",
+      "website": "https://company005.example.com",
+      "logo": "images/company/company_005_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C006": {
+      "company_id": "C006",
+      "company_name": "คลาวด์เนทีฟไทย",
+      "industry": "Data & AI",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 06 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "กรุงเทพมหานคร",
+      "website": "https://company006.example.com",
+      "logo": "images/company/company_006_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C007": {
+      "company_id": "C007",
+      "company_name": "กรีนฟิลด์ดิจิทัล",
+      "industry": "Software Development",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 07 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "นนทบุรี",
+      "website": "https://company007.example.com",
+      "logo": "images/company/company_007_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C008": {
+      "company_id": "C008",
+      "company_name": "สตาร์ทอัพแล็บ",
+      "industry": "IT Services",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 08 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "เชียงใหม่",
+      "website": "https://company008.example.com",
+      "logo": "images/company/company_008_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C009": {
+      "company_id": "C009",
+      "company_name": "อินโนเวติกส์",
+      "industry": "FinTech",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 09 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "ขอนแก่น",
+      "website": "https://company009.example.com",
+      "logo": "images/company/company_009_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C010": {
+      "company_id": "C010",
+      "company_name": "โมบายเฟิร์สท์",
+      "industry": "E-commerce",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 10 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "ชลบุรี",
+      "website": "https://company010.example.com",
+      "logo": "images/company/company_010_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C011": {
+      "company_id": "C011",
+      "company_name": "ดาต้าโฟลว์เอเชีย",
+      "industry": "Digital Agency",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 11 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "กรุงเทพมหานคร",
+      "website": "https://company011.example.com",
+      "logo": "images/company/company_011_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C012": {
+      "company_id": "C012",
+      "company_name": "เว็บสเฟียร์",
+      "industry": "Data & AI",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 12 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "นนทบุรี",
+      "website": "https://company012.example.com",
+      "logo": "images/company/company_012_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C013": {
+      "company_id": "C013",
+      "company_name": "ฟินเทคคอนเน็กต์",
+      "industry": "Software Development",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 13 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "เชียงใหม่",
+      "website": "https://company013.example.com",
+      "logo": "images/company/company_013_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C014": {
+      "company_id": "C014",
+      "company_name": "สมาร์ทซิสเต็มส์",
+      "industry": "IT Services",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 14 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "ขอนแก่น",
+      "website": "https://company014.example.com",
+      "logo": "images/company/company_014_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C015": {
+      "company_id": "C015",
+      "company_name": "พิกเซลพอยต์",
+      "industry": "FinTech",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 15 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "ชลบุรี",
+      "website": "https://company015.example.com",
+      "logo": "images/company/company_015_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C016": {
+      "company_id": "C016",
+      "company_name": "เอไอเน็กซ์",
+      "industry": "E-commerce",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 16 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "กรุงเทพมหานคร",
+      "website": "https://company016.example.com",
+      "logo": "images/company/company_016_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C017": {
+      "company_id": "C017",
+      "company_name": "โอเพ่นสแต็กไทย",
+      "industry": "Digital Agency",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 17 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "นนทบุรี",
+      "website": "https://company017.example.com",
+      "logo": "images/company/company_017_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C018": {
+      "company_id": "C018",
+      "company_name": "เทคทรีโซลูชัน",
+      "industry": "Data & AI",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 18 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "เชียงใหม่",
+      "website": "https://company018.example.com",
+      "logo": "images/company/company_018_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C019": {
+      "company_id": "C019",
+      "company_name": "โกลบอลโค้ด",
+      "industry": "Software Development",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 19 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "ขอนแก่น",
+      "website": "https://company019.example.com",
+      "logo": "images/company/company_019_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C020": {
+      "company_id": "C020",
+      "company_name": "ครีเอทีฟบิตส์",
+      "industry": "IT Services",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 20 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "ชลบุรี",
+      "website": "https://company020.example.com",
+      "logo": "images/company/company_020_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C021": {
+      "company_id": "C021",
+      "company_name": "แอปเวิร์คส์",
+      "industry": "FinTech",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 21 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "กรุงเทพมหานคร",
+      "website": "https://company021.example.com",
+      "logo": "images/company/company_021_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C022": {
+      "company_id": "C022",
+      "company_name": "ไซเบอร์การ์ด",
+      "industry": "E-commerce",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 22 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "นนทบุรี",
+      "website": "https://company022.example.com",
+      "logo": "images/company/company_022_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C023": {
+      "company_id": "C023",
+      "company_name": "ควอนตัมดาต้า",
+      "industry": "Digital Agency",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 23 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "เชียงใหม่",
+      "website": "https://company023.example.com",
+      "logo": "images/company/company_023_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C024": {
+      "company_id": "C024",
+      "company_name": "ฟูลสแตกฟาวน์ดรี",
+      "industry": "Data & AI",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 24 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "ขอนแก่น",
+      "website": "https://company024.example.com",
+      "logo": "images/company/company_024_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C025": {
+      "company_id": "C025",
+      "company_name": "อีโคเทคดิจิทัล",
+      "industry": "Software Development",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 25 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "ชลบุรี",
+      "website": "https://company025.example.com",
+      "logo": "images/company/company_025_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C026": {
+      "company_id": "C026",
+      "company_name": "แพลตฟอร์มวัน",
+      "industry": "IT Services",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 26 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "กรุงเทพมหานคร",
+      "website": "https://company026.example.com",
+      "logo": "images/company/company_026_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C027": {
+      "company_id": "C027",
+      "company_name": "เน็ตเวิร์กพลัส",
+      "industry": "FinTech",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 27 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "นนทบุรี",
+      "website": "https://company027.example.com",
+      "logo": "images/company/company_027_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C028": {
+      "company_id": "C028",
+      "company_name": "เดฟโอปส์ฮับ",
+      "industry": "E-commerce",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 28 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "เชียงใหม่",
+      "website": "https://company028.example.com",
+      "logo": "images/company/company_028_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C029": {
+      "company_id": "C029",
+      "company_name": "บิสซิเนสแอปส์",
+      "industry": "Digital Agency",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 29 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "ขอนแก่น",
+      "website": "https://company029.example.com",
+      "logo": "images/company/company_029_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    },
+    "C030": {
+      "company_id": "C030",
+      "company_name": "ฟิวเจอร์เวิร์กส์",
+      "industry": "Data & AI",
+      "description": "บริษัทตัวอย่างสำหรับสาธิตระบบ JobMate ลำดับที่ 30 ให้บริการด้านเทคโนโลยีและซอฟต์แวร์",
+      "location": "ชลบุรี",
+      "website": "https://company030.example.com",
+      "logo": "images/company/company_030_logo.webp",
+      "data_origin": "synthetic_demo_data"
+    }
+  },
+  "categories": {
+    "CAT001": {
+      "category_id": "CAT001",
+      "name": "Frontend Development",
+      "description": "การพัฒนาส่วนหน้าของเว็บ",
+      "icon": "icons/category_frontend.svg"
+    },
+    "CAT002": {
+      "category_id": "CAT002",
+      "name": "Backend Development",
+      "description": "การพัฒนาระบบหลังบ้านและ API",
+      "icon": "icons/category_backend.svg"
+    },
+    "CAT003": {
+      "category_id": "CAT003",
+      "name": "Full Stack Development",
+      "description": "การพัฒนาทั้ง Frontend และ Backend",
+      "icon": "icons/category_fullstack.svg"
+    },
+    "CAT004": {
+      "category_id": "CAT004",
+      "name": "Mobile Development",
+      "description": "การพัฒนาแอปพลิเคชันมือถือ",
+      "icon": "icons/category_mobile.svg"
+    },
+    "CAT005": {
+      "category_id": "CAT005",
+      "name": "Data & AI",
+      "description": "ข้อมูล ปัญญาประดิษฐ์ และ Machine Learning",
+      "icon": "icons/category_data_ai.svg"
+    },
+    "CAT006": {
+      "category_id": "CAT006",
+      "name": "DevOps & Cloud",
+      "description": "ระบบคลาวด์ CI/CD และโครงสร้างพื้นฐาน",
+      "icon": "icons/category_devops.svg"
+    },
+    "CAT007": {
+      "category_id": "CAT007",
+      "name": "QA & Testing",
+      "description": "การทดสอบและประกันคุณภาพซอฟต์แวร์",
+      "icon": "icons/category_qa.svg"
+    },
+    "CAT008": {
+      "category_id": "CAT008",
+      "name": "UI/UX Design",
+      "description": "การออกแบบประสบการณ์และส่วนติดต่อผู้ใช้",
+      "icon": "icons/category_uiux.svg"
+    }
+  },
+  "skills": {
+    "SK001": {
+      "skill_id": "SK001",
+      "name": "JavaScript"
+    },
+    "SK002": {
+      "skill_id": "SK002",
+      "name": "TypeScript"
+    },
+    "SK003": {
+      "skill_id": "SK003",
+      "name": "React"
+    },
+    "SK004": {
+      "skill_id": "SK004",
+      "name": "Vue"
+    },
+    "SK005": {
+      "skill_id": "SK005",
+      "name": "HTML"
+    },
+    "SK006": {
+      "skill_id": "SK006",
+      "name": "CSS"
+    },
+    "SK007": {
+      "skill_id": "SK007",
+      "name": "Node.js"
+    },
+    "SK008": {
+      "skill_id": "SK008",
+      "name": "Express.js"
+    },
+    "SK009": {
+      "skill_id": "SK009",
+      "name": "Java"
+    },
+    "SK010": {
+      "skill_id": "SK010",
+      "name": "Python"
+    },
+    "SK011": {
+      "skill_id": "SK011",
+      "name": "SQL"
+    },
+    "SK012": {
+      "skill_id": "SK012",
+      "name": "Firebase"
+    },
+    "SK013": {
+      "skill_id": "SK013",
+      "name": "REST API"
+    },
+    "SK014": {
+      "skill_id": "SK014",
+      "name": "Git"
+    },
+    "SK015": {
+      "skill_id": "SK015",
+      "name": "Docker"
+    },
+    "SK016": {
+      "skill_id": "SK016",
+      "name": "AWS"
+    },
+    "SK017": {
+      "skill_id": "SK017",
+      "name": "Flutter"
+    },
+    "SK018": {
+      "skill_id": "SK018",
+      "name": "Kotlin"
+    },
+    "SK019": {
+      "skill_id": "SK019",
+      "name": "Figma"
+    },
+    "SK020": {
+      "skill_id": "SK020",
+      "name": "Playwright"
+    },
+    "SK021": {
+      "skill_id": "SK021",
+      "name": "Jest"
+    },
+    "SK022": {
+      "skill_id": "SK022",
+      "name": "MongoDB"
+    },
+    "SK023": {
+      "skill_id": "SK023",
+      "name": "PostgreSQL"
+    },
+    "SK024": {
+      "skill_id": "SK024",
+      "name": "Machine Learning"
+    },
+    "SK025": {
+      "skill_id": "SK025",
+      "name": "Linux"
+    },
+    "SK026": {
+      "skill_id": "SK026",
+      "name": "CI/CD"
+    },
+    "SK027": {
+      "skill_id": "SK027",
+      "name": "Cypress"
+    },
+    "SK028": {
+      "skill_id": "SK028",
+      "name": "C#"
+    },
+    "SK029": {
+      "skill_id": "SK029",
+      "name": "PHP"
+    },
+    "SK030": {
+      "skill_id": "SK030",
+      "name": "UI Design"
+    }
+  },
+  "jobs": {
+    "J001": {
+      "job_id": "J001",
+      "company_id": "C001",
+      "category_id": "CAT001",
+      "job_title": "Frontend Developer",
+      "description": "พัฒนาและดูแลส่วนติดต่อผู้ใช้ของเว็บแอปพลิเคชัน ทำงานร่วมกับทีมออกแบบและ Backend รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J001",
+      "requirements": [
+        "React",
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "salary": 13700,
+      "location": "กรุงเทพมหานคร",
+      "work_mode": "Hybrid",
+      "job_type": "Full-time",
+      "posted_at": "2026-08-01",
+      "thumbnail": "images/thumbnails/job_001_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J002": {
+      "job_id": "J002",
+      "company_id": "C002",
+      "category_id": "CAT002",
+      "job_title": "Backend Developer",
+      "description": "พัฒนา API ออกแบบตรรกะทางธุรกิจ และดูแลการเชื่อมต่อฐานข้อมูล รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J002",
+      "requirements": [
+        "Node.js",
+        "Express.js",
+        "REST API",
+        "SQL"
+      ],
+      "salary": 15400,
+      "location": "นนทบุรี",
+      "work_mode": "On-site",
+      "job_type": "Full-time",
+      "posted_at": "2026-08-03",
+      "thumbnail": "images/thumbnails/job_002_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J003": {
+      "job_id": "J003",
+      "company_id": "C003",
+      "category_id": "CAT003",
+      "job_title": "Full Stack Developer",
+      "description": "พัฒนาเว็บแอปพลิเคชันทั้งฝั่ง Frontend และ Backend พร้อมเขียนชุดทดสอบ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J003",
+      "requirements": [
+        "React",
+        "Node.js",
+        "REST API",
+        "Git"
+      ],
+      "salary": 17100,
+      "location": "เชียงใหม่",
+      "work_mode": "Remote",
+      "job_type": "Full-time",
+      "posted_at": "2026-08-05",
+      "thumbnail": "images/thumbnails/job_003_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J004": {
+      "job_id": "J004",
+      "company_id": "C004",
+      "category_id": "CAT004",
+      "job_title": "Mobile Developer",
+      "description": "พัฒนาและปรับปรุงแอปพลิเคชันบนอุปกรณ์มือถือ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J004",
+      "requirements": [
+        "Flutter",
+        "Kotlin",
+        "REST API",
+        "Git"
+      ],
+      "salary": 18800,
+      "location": "ขอนแก่น",
+      "work_mode": "Hybrid",
+      "job_type": "Part-time",
+      "posted_at": "2026-08-07",
+      "thumbnail": "images/thumbnails/job_004_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J005": {
+      "job_id": "J005",
+      "company_id": "C005",
+      "category_id": "CAT005",
+      "job_title": "Data Analyst",
+      "description": "รวบรวม วิเคราะห์ และสรุปข้อมูลเพื่อสนับสนุนการตัดสินใจ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J005",
+      "requirements": [
+        "Python",
+        "SQL",
+        "Machine Learning"
+      ],
+      "salary": 20500,
+      "location": "ชลบุรี",
+      "work_mode": "On-site",
+      "job_type": "Internship",
+      "posted_at": "2026-08-09",
+      "thumbnail": "images/thumbnails/job_005_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J006": {
+      "job_id": "J006",
+      "company_id": "C006",
+      "category_id": "CAT006",
+      "job_title": "DevOps Engineer",
+      "description": "ดูแลระบบ deploy อัตโนมัติ โครงสร้างพื้นฐาน และ monitoring รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J006",
+      "requirements": [
+        "Docker",
+        "AWS",
+        "Linux",
+        "CI/CD"
+      ],
+      "salary": 22200,
+      "location": "ทำงานจากที่บ้าน",
+      "work_mode": "Remote",
+      "job_type": "Full-time",
+      "posted_at": "2026-08-11",
+      "thumbnail": "images/thumbnails/job_006_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J007": {
+      "job_id": "J007",
+      "company_id": "C007",
+      "category_id": "CAT007",
+      "job_title": "QA Engineer",
+      "description": "ออกแบบ test cases ทดสอบระบบ และรายงานข้อผิดพลาด รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J007",
+      "requirements": [
+        "Playwright",
+        "Jest",
+        "Cypress",
+        "Git"
+      ],
+      "salary": 23900,
+      "location": "กรุงเทพมหานคร",
+      "work_mode": "Hybrid",
+      "job_type": "Full-time",
+      "posted_at": "2026-08-13",
+      "thumbnail": "images/thumbnails/job_007_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J008": {
+      "job_id": "J008",
+      "company_id": "C008",
+      "category_id": "CAT008",
+      "job_title": "UI/UX Designer",
+      "description": "ออกแบบ wireframe, prototype และปรับปรุงประสบการณ์ผู้ใช้ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J008",
+      "requirements": [
+        "Figma",
+        "UI Design"
+      ],
+      "salary": 25600,
+      "location": "นนทบุรี",
+      "work_mode": "On-site",
+      "job_type": "Full-time",
+      "posted_at": "2026-08-15",
+      "thumbnail": "images/thumbnails/job_008_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J009": {
+      "job_id": "J009",
+      "company_id": "C009",
+      "category_id": "CAT001",
+      "job_title": "Frontend Developer (Mid-level)",
+      "description": "พัฒนาและดูแลส่วนติดต่อผู้ใช้ของเว็บแอปพลิเคชัน ทำงานร่วมกับทีมออกแบบและ Backend รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J009",
+      "requirements": [
+        "React",
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "salary": 27300,
+      "location": "เชียงใหม่",
+      "work_mode": "Remote",
+      "job_type": "Part-time",
+      "posted_at": "2026-08-17",
+      "thumbnail": "images/thumbnails/job_009_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J010": {
+      "job_id": "J010",
+      "company_id": "C010",
+      "category_id": "CAT002",
+      "job_title": "Backend Developer (Senior)",
+      "description": "พัฒนา API ออกแบบตรรกะทางธุรกิจ และดูแลการเชื่อมต่อฐานข้อมูล รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J010",
+      "requirements": [
+        "Node.js",
+        "Express.js",
+        "REST API",
+        "SQL"
+      ],
+      "salary": 29000,
+      "location": "ขอนแก่น",
+      "work_mode": "Hybrid",
+      "job_type": "Internship",
+      "posted_at": "2026-08-19",
+      "thumbnail": "images/thumbnails/job_010_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J011": {
+      "job_id": "J011",
+      "company_id": "C011",
+      "category_id": "CAT003",
+      "job_title": "Full Stack Developer (Entry-level)",
+      "description": "พัฒนาเว็บแอปพลิเคชันทั้งฝั่ง Frontend และ Backend พร้อมเขียนชุดทดสอบ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J011",
+      "requirements": [
+        "React",
+        "Node.js",
+        "REST API",
+        "Git"
+      ],
+      "salary": 30700,
+      "location": "ชลบุรี",
+      "work_mode": "On-site",
+      "job_type": "Full-time",
+      "posted_at": "2026-08-21",
+      "thumbnail": "images/thumbnails/job_011_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J012": {
+      "job_id": "J012",
+      "company_id": "C012",
+      "category_id": "CAT004",
+      "job_title": "Mobile Developer (Junior)",
+      "description": "พัฒนาและปรับปรุงแอปพลิเคชันบนอุปกรณ์มือถือ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J012",
+      "requirements": [
+        "Flutter",
+        "Kotlin",
+        "REST API",
+        "Git"
+      ],
+      "salary": 32400,
+      "location": "ทำงานจากที่บ้าน",
+      "work_mode": "Remote",
+      "job_type": "Full-time",
+      "posted_at": "2026-08-23",
+      "thumbnail": "images/thumbnails/job_012_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J013": {
+      "job_id": "J013",
+      "company_id": "C013",
+      "category_id": "CAT005",
+      "job_title": "Data Analyst (Mid-level)",
+      "description": "รวบรวม วิเคราะห์ และสรุปข้อมูลเพื่อสนับสนุนการตัดสินใจ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J013",
+      "requirements": [
+        "Python",
+        "SQL",
+        "Machine Learning"
+      ],
+      "salary": 34100,
+      "location": "กรุงเทพมหานคร",
+      "work_mode": "Hybrid",
+      "job_type": "Full-time",
+      "posted_at": "2026-08-25",
+      "thumbnail": "images/thumbnails/job_013_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J014": {
+      "job_id": "J014",
+      "company_id": "C014",
+      "category_id": "CAT006",
+      "job_title": "DevOps Engineer (Senior)",
+      "description": "ดูแลระบบ deploy อัตโนมัติ โครงสร้างพื้นฐาน และ monitoring รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J014",
+      "requirements": [
+        "Docker",
+        "AWS",
+        "Linux",
+        "CI/CD"
+      ],
+      "salary": 35800,
+      "location": "นนทบุรี",
+      "work_mode": "On-site",
+      "job_type": "Part-time",
+      "posted_at": "2026-08-27",
+      "thumbnail": "images/thumbnails/job_014_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J015": {
+      "job_id": "J015",
+      "company_id": "C015",
+      "category_id": "CAT007",
+      "job_title": "QA Engineer (Entry-level)",
+      "description": "ออกแบบ test cases ทดสอบระบบ และรายงานข้อผิดพลาด รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J015",
+      "requirements": [
+        "Playwright",
+        "Jest",
+        "Cypress",
+        "Git"
+      ],
+      "salary": null,
+      "location": "เชียงใหม่",
+      "work_mode": "Remote",
+      "job_type": "Internship",
+      "posted_at": "2026-08-29",
+      "thumbnail": "images/thumbnails/job_015_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J016": {
+      "job_id": "J016",
+      "company_id": "C016",
+      "category_id": "CAT008",
+      "job_title": "UI/UX Designer (Junior)",
+      "description": "ออกแบบ wireframe, prototype และปรับปรุงประสบการณ์ผู้ใช้ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J016",
+      "requirements": [
+        "Figma",
+        "UI Design"
+      ],
+      "salary": 39200,
+      "location": "ขอนแก่น",
+      "work_mode": "Hybrid",
+      "job_type": "Full-time",
+      "posted_at": "2026-08-31",
+      "thumbnail": "images/thumbnails/job_016_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J017": {
+      "job_id": "J017",
+      "company_id": "C017",
+      "category_id": "CAT001",
+      "job_title": "Frontend Developer (Mid-level)",
+      "description": "พัฒนาและดูแลส่วนติดต่อผู้ใช้ของเว็บแอปพลิเคชัน ทำงานร่วมกับทีมออกแบบและ Backend รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J017",
+      "requirements": [
+        "React",
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "salary": 40900,
+      "location": "ชลบุรี",
+      "work_mode": "On-site",
+      "job_type": "Full-time",
+      "posted_at": "2026-09-02",
+      "thumbnail": "images/thumbnails/job_017_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J018": {
+      "job_id": "J018",
+      "company_id": "C018",
+      "category_id": "CAT002",
+      "job_title": "Backend Developer (Senior)",
+      "description": "พัฒนา API ออกแบบตรรกะทางธุรกิจ และดูแลการเชื่อมต่อฐานข้อมูล รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J018",
+      "requirements": [
+        "Node.js",
+        "Express.js",
+        "REST API",
+        "SQL"
+      ],
+      "salary": 42600,
+      "location": "ทำงานจากที่บ้าน",
+      "work_mode": "Remote",
+      "job_type": "Full-time",
+      "posted_at": "2026-09-04",
+      "thumbnail": "images/thumbnails/job_018_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J019": {
+      "job_id": "J019",
+      "company_id": "C019",
+      "category_id": "CAT003",
+      "job_title": "Full Stack Developer (Entry-level)",
+      "description": "พัฒนาเว็บแอปพลิเคชันทั้งฝั่ง Frontend และ Backend พร้อมเขียนชุดทดสอบ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J019",
+      "requirements": [
+        "React",
+        "Node.js",
+        "REST API",
+        "Git"
+      ],
+      "salary": 44300,
+      "location": "กรุงเทพมหานคร",
+      "work_mode": "Hybrid",
+      "job_type": "Part-time",
+      "posted_at": "2026-09-06",
+      "thumbnail": "images/thumbnails/job_019_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J020": {
+      "job_id": "J020",
+      "company_id": "C020",
+      "category_id": "CAT004",
+      "job_title": "Mobile Developer (Junior)",
+      "description": "พัฒนาและปรับปรุงแอปพลิเคชันบนอุปกรณ์มือถือ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J020",
+      "requirements": [
+        "Flutter",
+        "Kotlin",
+        "REST API",
+        "Git"
+      ],
+      "salary": 46000,
+      "location": "นนทบุรี",
+      "work_mode": "On-site",
+      "job_type": "Internship",
+      "posted_at": "2026-09-08",
+      "thumbnail": "images/thumbnails/job_020_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J021": {
+      "job_id": "J021",
+      "company_id": "C021",
+      "category_id": "CAT005",
+      "job_title": "Data Analyst (Mid-level)",
+      "description": "รวบรวม วิเคราะห์ และสรุปข้อมูลเพื่อสนับสนุนการตัดสินใจ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J021",
+      "requirements": [
+        "Python",
+        "SQL",
+        "Machine Learning"
+      ],
+      "salary": 47700,
+      "location": "เชียงใหม่",
+      "work_mode": "Remote",
+      "job_type": "Full-time",
+      "posted_at": "2026-09-10",
+      "thumbnail": "images/thumbnails/job_021_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J022": {
+      "job_id": "J022",
+      "company_id": "C022",
+      "category_id": "CAT006",
+      "job_title": "DevOps Engineer (Senior)",
+      "description": "ดูแลระบบ deploy อัตโนมัติ โครงสร้างพื้นฐาน และ monitoring รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J022",
+      "requirements": [
+        "Docker",
+        "AWS",
+        "Linux",
+        "CI/CD"
+      ],
+      "salary": 49400,
+      "location": "ขอนแก่น",
+      "work_mode": "Hybrid",
+      "job_type": "Full-time",
+      "posted_at": "2026-09-12",
+      "thumbnail": "images/thumbnails/job_022_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J023": {
+      "job_id": "J023",
+      "company_id": "C023",
+      "category_id": "CAT007",
+      "job_title": "QA Engineer (Entry-level)",
+      "description": "ออกแบบ test cases ทดสอบระบบ และรายงานข้อผิดพลาด รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J023",
+      "requirements": [
+        "Playwright",
+        "Jest",
+        "Cypress",
+        "Git"
+      ],
+      "salary": 51100,
+      "location": "ชลบุรี",
+      "work_mode": "On-site",
+      "job_type": "Full-time",
+      "posted_at": "2026-09-14",
+      "thumbnail": "images/thumbnails/job_023_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J024": {
+      "job_id": "J024",
+      "company_id": "C024",
+      "category_id": "CAT008",
+      "job_title": "UI/UX Designer (Junior)",
+      "description": "ออกแบบ wireframe, prototype และปรับปรุงประสบการณ์ผู้ใช้ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J024",
+      "requirements": [
+        "Figma",
+        "UI Design"
+      ],
+      "salary": 52800,
+      "location": "ทำงานจากที่บ้าน",
+      "work_mode": "Remote",
+      "job_type": "Part-time",
+      "posted_at": "2026-09-16",
+      "thumbnail": "images/thumbnails/job_024_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J025": {
+      "job_id": "J025",
+      "company_id": "C025",
+      "category_id": "CAT001",
+      "job_title": "Frontend Developer (Mid-level)",
+      "description": "พัฒนาและดูแลส่วนติดต่อผู้ใช้ของเว็บแอปพลิเคชัน ทำงานร่วมกับทีมออกแบบและ Backend รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J025",
+      "requirements": [
+        "React",
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "salary": 54500,
+      "location": "กรุงเทพมหานคร",
+      "work_mode": "Hybrid",
+      "job_type": "Internship",
+      "posted_at": "2026-09-18",
+      "thumbnail": "images/thumbnails/job_025_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J026": {
+      "job_id": "J026",
+      "company_id": "C026",
+      "category_id": "CAT002",
+      "job_title": "Backend Developer (Senior)",
+      "description": "พัฒนา API ออกแบบตรรกะทางธุรกิจ และดูแลการเชื่อมต่อฐานข้อมูล รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J026",
+      "requirements": [
+        "Node.js",
+        "Express.js",
+        "REST API",
+        "SQL"
+      ],
+      "salary": 56200,
+      "location": "นนทบุรี",
+      "work_mode": "On-site",
+      "job_type": "Full-time",
+      "posted_at": "2026-09-20",
+      "thumbnail": "images/thumbnails/job_026_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J027": {
+      "job_id": "J027",
+      "company_id": "C027",
+      "category_id": "CAT003",
+      "job_title": "Full Stack Developer (Entry-level)",
+      "description": "พัฒนาเว็บแอปพลิเคชันทั้งฝั่ง Frontend และ Backend พร้อมเขียนชุดทดสอบ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J027",
+      "requirements": [
+        "React",
+        "Node.js",
+        "REST API",
+        "Git"
+      ],
+      "salary": 57900,
+      "location": "เชียงใหม่",
+      "work_mode": "Remote",
+      "job_type": "Full-time",
+      "posted_at": "2026-09-22",
+      "thumbnail": "images/thumbnails/job_027_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J028": {
+      "job_id": "J028",
+      "company_id": "C028",
+      "category_id": "CAT004",
+      "job_title": "Mobile Developer (Junior)",
+      "description": "พัฒนาและปรับปรุงแอปพลิเคชันบนอุปกรณ์มือถือ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J028",
+      "requirements": [
+        "Flutter",
+        "Kotlin",
+        "REST API",
+        "Git"
+      ],
+      "salary": 59600,
+      "location": "ขอนแก่น",
+      "work_mode": "Hybrid",
+      "job_type": "Full-time",
+      "posted_at": "2026-09-24",
+      "thumbnail": "images/thumbnails/job_028_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J029": {
+      "job_id": "J029",
+      "company_id": "C029",
+      "category_id": "CAT005",
+      "job_title": "Data Analyst (Mid-level)",
+      "description": "รวบรวม วิเคราะห์ และสรุปข้อมูลเพื่อสนับสนุนการตัดสินใจ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J029",
+      "requirements": [
+        "Python",
+        "SQL",
+        "Machine Learning"
+      ],
+      "salary": 13300,
+      "location": "ชลบุรี",
+      "work_mode": "On-site",
+      "job_type": "Part-time",
+      "posted_at": "2026-09-26",
+      "thumbnail": "images/thumbnails/job_029_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J030": {
+      "job_id": "J030",
+      "company_id": "C030",
+      "category_id": "CAT006",
+      "job_title": "DevOps Engineer (Senior)",
+      "description": "ดูแลระบบ deploy อัตโนมัติ โครงสร้างพื้นฐาน และ monitoring รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J030",
+      "requirements": [
+        "Docker",
+        "AWS",
+        "Linux",
+        "CI/CD"
+      ],
+      "salary": null,
+      "location": "ทำงานจากที่บ้าน",
+      "work_mode": "Remote",
+      "job_type": "Internship",
+      "posted_at": "2026-09-28",
+      "thumbnail": "images/thumbnails/job_030_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J031": {
+      "job_id": "J031",
+      "company_id": "C001",
+      "category_id": "CAT007",
+      "job_title": "QA Engineer (Entry-level)",
+      "description": "ออกแบบ test cases ทดสอบระบบ และรายงานข้อผิดพลาด รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J031",
+      "requirements": [
+        "Playwright",
+        "Jest",
+        "Cypress",
+        "Git"
+      ],
+      "salary": 16700,
+      "location": "กรุงเทพมหานคร",
+      "work_mode": "Hybrid",
+      "job_type": "Full-time",
+      "posted_at": "2026-09-30",
+      "thumbnail": "images/thumbnails/job_031_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J032": {
+      "job_id": "J032",
+      "company_id": "C002",
+      "category_id": "CAT008",
+      "job_title": "UI/UX Designer (Junior)",
+      "description": "ออกแบบ wireframe, prototype และปรับปรุงประสบการณ์ผู้ใช้ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J032",
+      "requirements": [
+        "Figma",
+        "UI Design"
+      ],
+      "salary": 18400,
+      "location": "นนทบุรี",
+      "work_mode": "On-site",
+      "job_type": "Full-time",
+      "posted_at": "2026-10-02",
+      "thumbnail": "images/thumbnails/job_032_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J033": {
+      "job_id": "J033",
+      "company_id": "C003",
+      "category_id": "CAT001",
+      "job_title": "Frontend Developer (Mid-level)",
+      "description": "พัฒนาและดูแลส่วนติดต่อผู้ใช้ของเว็บแอปพลิเคชัน ทำงานร่วมกับทีมออกแบบและ Backend รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J033",
+      "requirements": [
+        "React",
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "salary": 20100,
+      "location": "เชียงใหม่",
+      "work_mode": "Remote",
+      "job_type": "Full-time",
+      "posted_at": "2026-10-04",
+      "thumbnail": "images/thumbnails/job_033_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J034": {
+      "job_id": "J034",
+      "company_id": "C004",
+      "category_id": "CAT002",
+      "job_title": "Backend Developer (Senior)",
+      "description": "พัฒนา API ออกแบบตรรกะทางธุรกิจ และดูแลการเชื่อมต่อฐานข้อมูล รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J034",
+      "requirements": [
+        "Node.js",
+        "Express.js",
+        "REST API",
+        "SQL"
+      ],
+      "salary": 21800,
+      "location": "ขอนแก่น",
+      "work_mode": "Hybrid",
+      "job_type": "Part-time",
+      "posted_at": "2026-10-06",
+      "thumbnail": "images/thumbnails/job_034_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J035": {
+      "job_id": "J035",
+      "company_id": "C005",
+      "category_id": "CAT003",
+      "job_title": "Full Stack Developer (Entry-level)",
+      "description": "พัฒนาเว็บแอปพลิเคชันทั้งฝั่ง Frontend และ Backend พร้อมเขียนชุดทดสอบ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J035",
+      "requirements": [
+        "React",
+        "Node.js",
+        "REST API",
+        "Git"
+      ],
+      "salary": 23500,
+      "location": "ชลบุรี",
+      "work_mode": "On-site",
+      "job_type": "Internship",
+      "posted_at": "2026-10-08",
+      "thumbnail": "images/thumbnails/job_035_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J036": {
+      "job_id": "J036",
+      "company_id": "C006",
+      "category_id": "CAT004",
+      "job_title": "Mobile Developer (Junior)",
+      "description": "พัฒนาและปรับปรุงแอปพลิเคชันบนอุปกรณ์มือถือ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J036",
+      "requirements": [
+        "Flutter",
+        "Kotlin",
+        "REST API",
+        "Git"
+      ],
+      "salary": 25200,
+      "location": "ทำงานจากที่บ้าน",
+      "work_mode": "Remote",
+      "job_type": "Full-time",
+      "posted_at": "2026-10-10",
+      "thumbnail": "images/thumbnails/job_036_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J037": {
+      "job_id": "J037",
+      "company_id": "C007",
+      "category_id": "CAT005",
+      "job_title": "Data Analyst (Mid-level)",
+      "description": "รวบรวม วิเคราะห์ และสรุปข้อมูลเพื่อสนับสนุนการตัดสินใจ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J037",
+      "requirements": [
+        "Python",
+        "SQL",
+        "Machine Learning"
+      ],
+      "salary": 26900,
+      "location": "กรุงเทพมหานคร",
+      "work_mode": "Hybrid",
+      "job_type": "Full-time",
+      "posted_at": "2026-10-12",
+      "thumbnail": "images/thumbnails/job_037_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J038": {
+      "job_id": "J038",
+      "company_id": "C008",
+      "category_id": "CAT006",
+      "job_title": "DevOps Engineer (Senior)",
+      "description": "ดูแลระบบ deploy อัตโนมัติ โครงสร้างพื้นฐาน และ monitoring รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J038",
+      "requirements": [
+        "Docker",
+        "AWS",
+        "Linux",
+        "CI/CD"
+      ],
+      "salary": 28600,
+      "location": "นนทบุรี",
+      "work_mode": "On-site",
+      "job_type": "Full-time",
+      "posted_at": "2026-10-14",
+      "thumbnail": "images/thumbnails/job_038_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J039": {
+      "job_id": "J039",
+      "company_id": "C009",
+      "category_id": "CAT007",
+      "job_title": "QA Engineer (Entry-level)",
+      "description": "ออกแบบ test cases ทดสอบระบบ และรายงานข้อผิดพลาด รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J039",
+      "requirements": [
+        "Playwright",
+        "Jest",
+        "Cypress",
+        "Git"
+      ],
+      "salary": 30300,
+      "location": "เชียงใหม่",
+      "work_mode": "Remote",
+      "job_type": "Part-time",
+      "posted_at": "2026-10-16",
+      "thumbnail": "images/thumbnails/job_039_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J040": {
+      "job_id": "J040",
+      "company_id": "C010",
+      "category_id": "CAT008",
+      "job_title": "UI/UX Designer (Junior)",
+      "description": "ออกแบบ wireframe, prototype และปรับปรุงประสบการณ์ผู้ใช้ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J040",
+      "requirements": [
+        "Figma",
+        "UI Design"
+      ],
+      "salary": 32000,
+      "location": "ขอนแก่น",
+      "work_mode": "Hybrid",
+      "job_type": "Internship",
+      "posted_at": "2026-10-18",
+      "thumbnail": "images/thumbnails/job_040_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J041": {
+      "job_id": "J041",
+      "company_id": "C011",
+      "category_id": "CAT001",
+      "job_title": "Frontend Developer (Mid-level)",
+      "description": "พัฒนาและดูแลส่วนติดต่อผู้ใช้ของเว็บแอปพลิเคชัน ทำงานร่วมกับทีมออกแบบและ Backend รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J041",
+      "requirements": [
+        "React",
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "salary": 33700,
+      "location": "ชลบุรี",
+      "work_mode": "On-site",
+      "job_type": "Full-time",
+      "posted_at": "2026-10-20",
+      "thumbnail": "images/thumbnails/job_041_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J042": {
+      "job_id": "J042",
+      "company_id": "C012",
+      "category_id": "CAT002",
+      "job_title": "Backend Developer (Senior)",
+      "description": "พัฒนา API ออกแบบตรรกะทางธุรกิจ และดูแลการเชื่อมต่อฐานข้อมูล รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J042",
+      "requirements": [
+        "Node.js",
+        "Express.js",
+        "REST API",
+        "SQL"
+      ],
+      "salary": 35400,
+      "location": "ทำงานจากที่บ้าน",
+      "work_mode": "Remote",
+      "job_type": "Full-time",
+      "posted_at": "2026-10-22",
+      "thumbnail": "images/thumbnails/job_042_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J043": {
+      "job_id": "J043",
+      "company_id": "C013",
+      "category_id": "CAT003",
+      "job_title": "Full Stack Developer (Entry-level)",
+      "description": "พัฒนาเว็บแอปพลิเคชันทั้งฝั่ง Frontend และ Backend พร้อมเขียนชุดทดสอบ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J043",
+      "requirements": [
+        "React",
+        "Node.js",
+        "REST API",
+        "Git"
+      ],
+      "salary": 37100,
+      "location": "กรุงเทพมหานคร",
+      "work_mode": "Hybrid",
+      "job_type": "Full-time",
+      "posted_at": "2026-10-24",
+      "thumbnail": "images/thumbnails/job_043_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J044": {
+      "job_id": "J044",
+      "company_id": "C014",
+      "category_id": "CAT004",
+      "job_title": "Mobile Developer (Junior)",
+      "description": "พัฒนาและปรับปรุงแอปพลิเคชันบนอุปกรณ์มือถือ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J044",
+      "requirements": [
+        "Flutter",
+        "Kotlin",
+        "REST API",
+        "Git"
+      ],
+      "salary": 38800,
+      "location": "นนทบุรี",
+      "work_mode": "On-site",
+      "job_type": "Part-time",
+      "posted_at": "2026-10-26",
+      "thumbnail": "images/thumbnails/job_044_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J045": {
+      "job_id": "J045",
+      "company_id": "C015",
+      "category_id": "CAT005",
+      "job_title": "Data Analyst (Mid-level)",
+      "description": "รวบรวม วิเคราะห์ และสรุปข้อมูลเพื่อสนับสนุนการตัดสินใจ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J045",
+      "requirements": [
+        "Python",
+        "SQL",
+        "Machine Learning"
+      ],
+      "salary": null,
+      "location": "เชียงใหม่",
+      "work_mode": "Remote",
+      "job_type": "Internship",
+      "posted_at": "2026-10-28",
+      "thumbnail": "images/thumbnails/job_045_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J046": {
+      "job_id": "J046",
+      "company_id": "C016",
+      "category_id": "CAT006",
+      "job_title": "DevOps Engineer (Senior)",
+      "description": "ดูแลระบบ deploy อัตโนมัติ โครงสร้างพื้นฐาน และ monitoring รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J046",
+      "requirements": [
+        "Docker",
+        "AWS",
+        "Linux",
+        "CI/CD"
+      ],
+      "salary": 42200,
+      "location": "ขอนแก่น",
+      "work_mode": "Hybrid",
+      "job_type": "Full-time",
+      "posted_at": "2026-10-30",
+      "thumbnail": "images/thumbnails/job_046_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J047": {
+      "job_id": "J047",
+      "company_id": "C017",
+      "category_id": "CAT007",
+      "job_title": "QA Engineer (Entry-level)",
+      "description": "ออกแบบ test cases ทดสอบระบบ และรายงานข้อผิดพลาด รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J047",
+      "requirements": [
+        "Playwright",
+        "Jest",
+        "Cypress",
+        "Git"
+      ],
+      "salary": 43900,
+      "location": "ชลบุรี",
+      "work_mode": "On-site",
+      "job_type": "Full-time",
+      "posted_at": "2026-11-01",
+      "thumbnail": "images/thumbnails/job_047_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J048": {
+      "job_id": "J048",
+      "company_id": "C018",
+      "category_id": "CAT008",
+      "job_title": "UI/UX Designer (Junior)",
+      "description": "ออกแบบ wireframe, prototype และปรับปรุงประสบการณ์ผู้ใช้ รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J048",
+      "requirements": [
+        "Figma",
+        "UI Design"
+      ],
+      "salary": 45600,
+      "location": "ทำงานจากที่บ้าน",
+      "work_mode": "Remote",
+      "job_type": "Full-time",
+      "posted_at": "2026-11-03",
+      "thumbnail": "images/thumbnails/job_048_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J049": {
+      "job_id": "J049",
+      "company_id": "C019",
+      "category_id": "CAT001",
+      "job_title": "Frontend Developer (Mid-level)",
+      "description": "พัฒนาและดูแลส่วนติดต่อผู้ใช้ของเว็บแอปพลิเคชัน ทำงานร่วมกับทีมออกแบบและ Backend รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J049",
+      "requirements": [
+        "React",
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "salary": 47300,
+      "location": "กรุงเทพมหานคร",
+      "work_mode": "Hybrid",
+      "job_type": "Part-time",
+      "posted_at": "2026-11-05",
+      "thumbnail": "images/thumbnails/job_049_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    },
+    "J050": {
+      "job_id": "J050",
+      "company_id": "C020",
+      "category_id": "CAT002",
+      "job_title": "Backend Developer (Senior)",
+      "description": "พัฒนา API ออกแบบตรรกะทางธุรกิจ และดูแลการเชื่อมต่อฐานข้อมูล รายการนี้เป็นข้อมูลจำลองสำหรับทดสอบระบบ JobMate รหัส J050",
+      "requirements": [
+        "Node.js",
+        "Express.js",
+        "REST API",
+        "SQL"
+      ],
+      "salary": 49000,
+      "location": "นนทบุรี",
+      "work_mode": "On-site",
+      "job_type": "Internship",
+      "posted_at": "2026-11-07",
+      "thumbnail": "images/thumbnails/job_050_thumb.webp",
+      "source_id": "SRC001",
+      "data_origin": "synthetic_demo_data"
+    }
+  },
+  "applications": {
+    "A001": {
+      "application_id": "A001",
+      "user_id": "U001",
+      "job_id": "J007",
+      "resume": "documents/resume_u001.pdf",
+      "applied_at": "2026-08-18",
+      "status": "Pending",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A002": {
+      "application_id": "A002",
+      "user_id": "U002",
+      "job_id": "J014",
+      "resume": "documents/resume_u002.pdf",
+      "applied_at": "2026-08-19",
+      "status": "Reviewing",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A003": {
+      "application_id": "A003",
+      "user_id": "U003",
+      "job_id": "J021",
+      "resume": "documents/resume_u003.pdf",
+      "applied_at": "2026-08-20",
+      "status": "Accepted",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A004": {
+      "application_id": "A004",
+      "user_id": "U004",
+      "job_id": "J028",
+      "resume": "documents/resume_u004.pdf",
+      "applied_at": "2026-08-21",
+      "status": "Rejected",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A005": {
+      "application_id": "A005",
+      "user_id": "U005",
+      "job_id": "J035",
+      "resume": "documents/resume_u005.pdf",
+      "applied_at": "2026-08-22",
+      "status": "Pending",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A006": {
+      "application_id": "A006",
+      "user_id": "U006",
+      "job_id": "J042",
+      "resume": "documents/resume_u006.pdf",
+      "applied_at": "2026-08-23",
+      "status": "Reviewing",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A007": {
+      "application_id": "A007",
+      "user_id": "U007",
+      "job_id": "J049",
+      "resume": "documents/resume_u007.pdf",
+      "applied_at": "2026-08-24",
+      "status": "Accepted",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A008": {
+      "application_id": "A008",
+      "user_id": "U008",
+      "job_id": "J006",
+      "resume": "documents/resume_u008.pdf",
+      "applied_at": "2026-08-25",
+      "status": "Rejected",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A009": {
+      "application_id": "A009",
+      "user_id": "U009",
+      "job_id": "J013",
+      "resume": "documents/resume_u009.pdf",
+      "applied_at": "2026-08-26",
+      "status": "Pending",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A010": {
+      "application_id": "A010",
+      "user_id": "U010",
+      "job_id": "J020",
+      "resume": "documents/resume_u010.pdf",
+      "applied_at": "2026-08-27",
+      "status": "Reviewing",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A011": {
+      "application_id": "A011",
+      "user_id": "U011",
+      "job_id": "J027",
+      "resume": "documents/resume_u011.pdf",
+      "applied_at": "2026-08-28",
+      "status": "Accepted",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A012": {
+      "application_id": "A012",
+      "user_id": "U012",
+      "job_id": "J034",
+      "resume": "documents/resume_u012.pdf",
+      "applied_at": "2026-08-29",
+      "status": "Rejected",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A013": {
+      "application_id": "A013",
+      "user_id": "U013",
+      "job_id": "J041",
+      "resume": "documents/resume_u013.pdf",
+      "applied_at": "2026-08-30",
+      "status": "Pending",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A014": {
+      "application_id": "A014",
+      "user_id": "U014",
+      "job_id": "J048",
+      "resume": "documents/resume_u014.pdf",
+      "applied_at": "2026-08-31",
+      "status": "Reviewing",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A015": {
+      "application_id": "A015",
+      "user_id": "U015",
+      "job_id": "J005",
+      "resume": "documents/resume_u015.pdf",
+      "applied_at": "2026-09-01",
+      "status": "Accepted",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A016": {
+      "application_id": "A016",
+      "user_id": "U016",
+      "job_id": "J012",
+      "resume": "documents/resume_u016.pdf",
+      "applied_at": "2026-09-02",
+      "status": "Rejected",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A017": {
+      "application_id": "A017",
+      "user_id": "U017",
+      "job_id": "J019",
+      "resume": "documents/resume_u017.pdf",
+      "applied_at": "2026-09-03",
+      "status": "Pending",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A018": {
+      "application_id": "A018",
+      "user_id": "U018",
+      "job_id": "J026",
+      "resume": "documents/resume_u018.pdf",
+      "applied_at": "2026-09-04",
+      "status": "Reviewing",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A019": {
+      "application_id": "A019",
+      "user_id": "U019",
+      "job_id": "J033",
+      "resume": "documents/resume_u019.pdf",
+      "applied_at": "2026-09-05",
+      "status": "Accepted",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A020": {
+      "application_id": "A020",
+      "user_id": "U020",
+      "job_id": "J040",
+      "resume": "documents/resume_u020.pdf",
+      "applied_at": "2026-09-06",
+      "status": "Rejected",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A021": {
+      "application_id": "A021",
+      "user_id": "U021",
+      "job_id": "J047",
+      "resume": "documents/resume_u021.pdf",
+      "applied_at": "2026-09-07",
+      "status": "Pending",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A022": {
+      "application_id": "A022",
+      "user_id": "U022",
+      "job_id": "J004",
+      "resume": "documents/resume_u022.pdf",
+      "applied_at": "2026-09-08",
+      "status": "Reviewing",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A023": {
+      "application_id": "A023",
+      "user_id": "U023",
+      "job_id": "J011",
+      "resume": "documents/resume_u023.pdf",
+      "applied_at": "2026-09-09",
+      "status": "Accepted",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A024": {
+      "application_id": "A024",
+      "user_id": "U024",
+      "job_id": "J018",
+      "resume": "documents/resume_u024.pdf",
+      "applied_at": "2026-09-10",
+      "status": "Rejected",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A025": {
+      "application_id": "A025",
+      "user_id": "U025",
+      "job_id": "J025",
+      "resume": "documents/resume_u025.pdf",
+      "applied_at": "2026-09-11",
+      "status": "Pending",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A026": {
+      "application_id": "A026",
+      "user_id": "U001",
+      "job_id": "J032",
+      "resume": "documents/resume_u001.pdf",
+      "applied_at": "2026-09-12",
+      "status": "Reviewing",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A027": {
+      "application_id": "A027",
+      "user_id": "U002",
+      "job_id": "J039",
+      "resume": "documents/resume_u002.pdf",
+      "applied_at": "2026-09-13",
+      "status": "Accepted",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A028": {
+      "application_id": "A028",
+      "user_id": "U003",
+      "job_id": "J046",
+      "resume": "documents/resume_u003.pdf",
+      "applied_at": "2026-09-14",
+      "status": "Rejected",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A029": {
+      "application_id": "A029",
+      "user_id": "U004",
+      "job_id": "J003",
+      "resume": "documents/resume_u004.pdf",
+      "applied_at": "2026-09-15",
+      "status": "Pending",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A030": {
+      "application_id": "A030",
+      "user_id": "U005",
+      "job_id": "J010",
+      "resume": "documents/resume_u005.pdf",
+      "applied_at": "2026-09-16",
+      "status": "Reviewing",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A031": {
+      "application_id": "A031",
+      "user_id": "U006",
+      "job_id": "J017",
+      "resume": "documents/resume_u006.pdf",
+      "applied_at": "2026-09-17",
+      "status": "Accepted",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A032": {
+      "application_id": "A032",
+      "user_id": "U007",
+      "job_id": "J024",
+      "resume": "documents/resume_u007.pdf",
+      "applied_at": "2026-09-18",
+      "status": "Rejected",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A033": {
+      "application_id": "A033",
+      "user_id": "U008",
+      "job_id": "J031",
+      "resume": "documents/resume_u008.pdf",
+      "applied_at": "2026-09-19",
+      "status": "Pending",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A034": {
+      "application_id": "A034",
+      "user_id": "U009",
+      "job_id": "J038",
+      "resume": "documents/resume_u009.pdf",
+      "applied_at": "2026-09-20",
+      "status": "Reviewing",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A035": {
+      "application_id": "A035",
+      "user_id": "U010",
+      "job_id": "J045",
+      "resume": "documents/resume_u010.pdf",
+      "applied_at": "2026-09-21",
+      "status": "Accepted",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A036": {
+      "application_id": "A036",
+      "user_id": "U011",
+      "job_id": "J002",
+      "resume": "documents/resume_u011.pdf",
+      "applied_at": "2026-09-22",
+      "status": "Rejected",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A037": {
+      "application_id": "A037",
+      "user_id": "U012",
+      "job_id": "J009",
+      "resume": "documents/resume_u012.pdf",
+      "applied_at": "2026-09-23",
+      "status": "Pending",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A038": {
+      "application_id": "A038",
+      "user_id": "U013",
+      "job_id": "J016",
+      "resume": "documents/resume_u013.pdf",
+      "applied_at": "2026-09-24",
+      "status": "Reviewing",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A039": {
+      "application_id": "A039",
+      "user_id": "U014",
+      "job_id": "J023",
+      "resume": "documents/resume_u014.pdf",
+      "applied_at": "2026-09-25",
+      "status": "Accepted",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A040": {
+      "application_id": "A040",
+      "user_id": "U015",
+      "job_id": "J030",
+      "resume": "documents/resume_u015.pdf",
+      "applied_at": "2026-09-26",
+      "status": "Rejected",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A041": {
+      "application_id": "A041",
+      "user_id": "U016",
+      "job_id": "J037",
+      "resume": "documents/resume_u016.pdf",
+      "applied_at": "2026-09-27",
+      "status": "Pending",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A042": {
+      "application_id": "A042",
+      "user_id": "U017",
+      "job_id": "J044",
+      "resume": "documents/resume_u017.pdf",
+      "applied_at": "2026-09-28",
+      "status": "Reviewing",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A043": {
+      "application_id": "A043",
+      "user_id": "U018",
+      "job_id": "J001",
+      "resume": "documents/resume_u018.pdf",
+      "applied_at": "2026-09-29",
+      "status": "Accepted",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A044": {
+      "application_id": "A044",
+      "user_id": "U019",
+      "job_id": "J008",
+      "resume": "documents/resume_u019.pdf",
+      "applied_at": "2026-09-30",
+      "status": "Rejected",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A045": {
+      "application_id": "A045",
+      "user_id": "U020",
+      "job_id": "J015",
+      "resume": "documents/resume_u020.pdf",
+      "applied_at": "2026-10-01",
+      "status": "Pending",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A046": {
+      "application_id": "A046",
+      "user_id": "U021",
+      "job_id": "J022",
+      "resume": "documents/resume_u021.pdf",
+      "applied_at": "2026-10-02",
+      "status": "Reviewing",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A047": {
+      "application_id": "A047",
+      "user_id": "U022",
+      "job_id": "J029",
+      "resume": "documents/resume_u022.pdf",
+      "applied_at": "2026-10-03",
+      "status": "Accepted",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A048": {
+      "application_id": "A048",
+      "user_id": "U023",
+      "job_id": "J036",
+      "resume": "documents/resume_u023.pdf",
+      "applied_at": "2026-10-04",
+      "status": "Rejected",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A049": {
+      "application_id": "A049",
+      "user_id": "U024",
+      "job_id": "J043",
+      "resume": "documents/resume_u024.pdf",
+      "applied_at": "2026-10-05",
+      "status": "Pending",
+      "data_origin": "synthetic_demo_data"
+    },
+    "A050": {
+      "application_id": "A050",
+      "user_id": "U025",
+      "job_id": "J050",
+      "resume": "documents/resume_u025.pdf",
+      "applied_at": "2026-10-06",
+      "status": "Reviewing",
+      "data_origin": "synthetic_demo_data"
+    }
+  },
+  "saved_jobs": {
+    "S001": {
+      "saved_job_id": "S001",
+      "user_id": "U003",
+      "job_id": "J009",
+      "saved_at": "2026-09-02"
+    },
+    "S002": {
+      "saved_job_id": "S002",
+      "user_id": "U006",
+      "job_id": "J018",
+      "saved_at": "2026-09-03"
+    },
+    "S003": {
+      "saved_job_id": "S003",
+      "user_id": "U009",
+      "job_id": "J027",
+      "saved_at": "2026-09-04"
+    },
+    "S004": {
+      "saved_job_id": "S004",
+      "user_id": "U012",
+      "job_id": "J036",
+      "saved_at": "2026-09-05"
+    },
+    "S005": {
+      "saved_job_id": "S005",
+      "user_id": "U015",
+      "job_id": "J045",
+      "saved_at": "2026-09-06"
+    },
+    "S006": {
+      "saved_job_id": "S006",
+      "user_id": "U018",
+      "job_id": "J004",
+      "saved_at": "2026-09-07"
+    },
+    "S007": {
+      "saved_job_id": "S007",
+      "user_id": "U021",
+      "job_id": "J013",
+      "saved_at": "2026-09-08"
+    },
+    "S008": {
+      "saved_job_id": "S008",
+      "user_id": "U024",
+      "job_id": "J022",
+      "saved_at": "2026-09-09"
+    },
+    "S009": {
+      "saved_job_id": "S009",
+      "user_id": "U002",
+      "job_id": "J031",
+      "saved_at": "2026-09-10"
+    },
+    "S010": {
+      "saved_job_id": "S010",
+      "user_id": "U005",
+      "job_id": "J040",
+      "saved_at": "2026-09-11"
+    },
+    "S011": {
+      "saved_job_id": "S011",
+      "user_id": "U008",
+      "job_id": "J049",
+      "saved_at": "2026-09-12"
+    },
+    "S012": {
+      "saved_job_id": "S012",
+      "user_id": "U011",
+      "job_id": "J008",
+      "saved_at": "2026-09-13"
+    },
+    "S013": {
+      "saved_job_id": "S013",
+      "user_id": "U014",
+      "job_id": "J017",
+      "saved_at": "2026-09-14"
+    },
+    "S014": {
+      "saved_job_id": "S014",
+      "user_id": "U017",
+      "job_id": "J026",
+      "saved_at": "2026-09-15"
+    },
+    "S015": {
+      "saved_job_id": "S015",
+      "user_id": "U020",
+      "job_id": "J035",
+      "saved_at": "2026-09-16"
+    },
+    "S016": {
+      "saved_job_id": "S016",
+      "user_id": "U023",
+      "job_id": "J044",
+      "saved_at": "2026-09-17"
+    },
+    "S017": {
+      "saved_job_id": "S017",
+      "user_id": "U001",
+      "job_id": "J003",
+      "saved_at": "2026-09-18"
+    },
+    "S018": {
+      "saved_job_id": "S018",
+      "user_id": "U004",
+      "job_id": "J012",
+      "saved_at": "2026-09-19"
+    },
+    "S019": {
+      "saved_job_id": "S019",
+      "user_id": "U007",
+      "job_id": "J021",
+      "saved_at": "2026-09-20"
+    },
+    "S020": {
+      "saved_job_id": "S020",
+      "user_id": "U010",
+      "job_id": "J030",
+      "saved_at": "2026-09-21"
+    },
+    "S021": {
+      "saved_job_id": "S021",
+      "user_id": "U013",
+      "job_id": "J039",
+      "saved_at": "2026-09-22"
+    },
+    "S022": {
+      "saved_job_id": "S022",
+      "user_id": "U016",
+      "job_id": "J048",
+      "saved_at": "2026-09-23"
+    },
+    "S023": {
+      "saved_job_id": "S023",
+      "user_id": "U019",
+      "job_id": "J007",
+      "saved_at": "2026-09-24"
+    },
+    "S024": {
+      "saved_job_id": "S024",
+      "user_id": "U022",
+      "job_id": "J016",
+      "saved_at": "2026-09-25"
+    },
+    "S025": {
+      "saved_job_id": "S025",
+      "user_id": "U025",
+      "job_id": "J025",
+      "saved_at": "2026-09-26"
+    },
+    "S026": {
+      "saved_job_id": "S026",
+      "user_id": "U003",
+      "job_id": "J034",
+      "saved_at": "2026-09-27"
+    },
+    "S027": {
+      "saved_job_id": "S027",
+      "user_id": "U006",
+      "job_id": "J043",
+      "saved_at": "2026-09-28"
+    },
+    "S028": {
+      "saved_job_id": "S028",
+      "user_id": "U009",
+      "job_id": "J002",
+      "saved_at": "2026-09-29"
+    },
+    "S029": {
+      "saved_job_id": "S029",
+      "user_id": "U012",
+      "job_id": "J011",
+      "saved_at": "2026-09-30"
+    },
+    "S030": {
+      "saved_job_id": "S030",
+      "user_id": "U015",
+      "job_id": "J020",
+      "saved_at": "2026-10-01"
+    },
+    "S031": {
+      "saved_job_id": "S031",
+      "user_id": "U018",
+      "job_id": "J029",
+      "saved_at": "2026-10-02"
+    },
+    "S032": {
+      "saved_job_id": "S032",
+      "user_id": "U021",
+      "job_id": "J038",
+      "saved_at": "2026-10-03"
+    },
+    "S033": {
+      "saved_job_id": "S033",
+      "user_id": "U024",
+      "job_id": "J047",
+      "saved_at": "2026-10-04"
+    },
+    "S034": {
+      "saved_job_id": "S034",
+      "user_id": "U002",
+      "job_id": "J006",
+      "saved_at": "2026-10-05"
+    },
+    "S035": {
+      "saved_job_id": "S035",
+      "user_id": "U005",
+      "job_id": "J015",
+      "saved_at": "2026-10-06"
+    },
+    "S036": {
+      "saved_job_id": "S036",
+      "user_id": "U008",
+      "job_id": "J024",
+      "saved_at": "2026-10-07"
+    },
+    "S037": {
+      "saved_job_id": "S037",
+      "user_id": "U011",
+      "job_id": "J033",
+      "saved_at": "2026-10-08"
+    },
+    "S038": {
+      "saved_job_id": "S038",
+      "user_id": "U014",
+      "job_id": "J042",
+      "saved_at": "2026-10-09"
+    },
+    "S039": {
+      "saved_job_id": "S039",
+      "user_id": "U017",
+      "job_id": "J001",
+      "saved_at": "2026-10-10"
+    },
+    "S040": {
+      "saved_job_id": "S040",
+      "user_id": "U020",
+      "job_id": "J010",
+      "saved_at": "2026-09-01"
+    }
+  },
+  "data_sources": {
+    "SRC001": {
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo data",
+      "quantity": 50,
+      "license_or_permission": "จัดทำเป็นข้อมูลตัวอย่าง ไม่ใช่ประกาศงานจริง",
+      "note": "เอกสาร Assignment 4 ระบุให้บันทึกชื่อเว็บไซต์ URL วันที่เข้าถึง ประเภทข้อมูล และจำนวนข้อมูลสำหรับประกาศงานจริง กรุณาเพิ่มแหล่งข้อมูลจริงก่อนส่งงาน"
+    }
+  },
+  "job_sources": {
+    "J001": {
+      "job_id": "J001",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J002": {
+      "job_id": "J002",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J003": {
+      "job_id": "J003",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J004": {
+      "job_id": "J004",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J005": {
+      "job_id": "J005",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J006": {
+      "job_id": "J006",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J007": {
+      "job_id": "J007",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J008": {
+      "job_id": "J008",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J009": {
+      "job_id": "J009",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J010": {
+      "job_id": "J010",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J011": {
+      "job_id": "J011",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J012": {
+      "job_id": "J012",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J013": {
+      "job_id": "J013",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J014": {
+      "job_id": "J014",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J015": {
+      "job_id": "J015",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J016": {
+      "job_id": "J016",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J017": {
+      "job_id": "J017",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J018": {
+      "job_id": "J018",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J019": {
+      "job_id": "J019",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J020": {
+      "job_id": "J020",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J021": {
+      "job_id": "J021",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J022": {
+      "job_id": "J022",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J023": {
+      "job_id": "J023",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J024": {
+      "job_id": "J024",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J025": {
+      "job_id": "J025",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J026": {
+      "job_id": "J026",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J027": {
+      "job_id": "J027",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J028": {
+      "job_id": "J028",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J029": {
+      "job_id": "J029",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J030": {
+      "job_id": "J030",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J031": {
+      "job_id": "J031",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J032": {
+      "job_id": "J032",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J033": {
+      "job_id": "J033",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J034": {
+      "job_id": "J034",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J035": {
+      "job_id": "J035",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J036": {
+      "job_id": "J036",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J037": {
+      "job_id": "J037",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J038": {
+      "job_id": "J038",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J039": {
+      "job_id": "J039",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J040": {
+      "job_id": "J040",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J041": {
+      "job_id": "J041",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J042": {
+      "job_id": "J042",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J043": {
+      "job_id": "J043",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J044": {
+      "job_id": "J044",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J045": {
+      "job_id": "J045",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J046": {
+      "job_id": "J046",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J047": {
+      "job_id": "J047",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J048": {
+      "job_id": "J048",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J049": {
+      "job_id": "J049",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    },
+    "J050": {
+      "job_id": "J050",
+      "source_id": "SRC001",
+      "source_name": "ข้อมูลจำลองที่จัดทำเพื่อการเรียนและทดสอบ",
+      "source_url": "",
+      "access_date": "2026-10-20",
+      "data_type": "Synthetic demo job listing",
+      "quantity": 1,
+      "note": "ข้อมูลนี้เป็นข้อมูลจำลอง ไม่ได้คัดลอกจากประกาศงานจริง ต้องแทนที่ด้วยแหล่งข้อมูลจริงก่อนส่งงานที่กำหนดให้มี URL อ้างอิง"
+    }
+  }
+}
