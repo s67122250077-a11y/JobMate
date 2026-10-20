@@ -12,7 +12,7 @@
 - หน้าสาธิตสถานะใบสมัครจากชุดข้อมูลตัวอย่าง
 - สถานะ Loading, Error และ Empty
 - Responsive layout สำหรับหน้าจอเล็กและใหญ่
-- อ่านข้อมูลจาก Realtime Database หากตั้งค่า Firebase แล้ว; ถ้ายังไม่ตั้งค่าจะใช้ JobMate_data.json เพื่อสาธิต
+- อ่านข้อมูลจาก Realtime Database หากตั้งค่า Firebase แล้ว; ถ้ายังไม่ตั้งค่าจะใช้ jobmate_data.json เพื่อสาธิต
 
 ## ต้องติดตั้งก่อนรัน
 - Node.js รุ่น LTS
@@ -21,11 +21,11 @@
 
 ## วิธีรันบน Windows
 1. แตกไฟล์ ZIP
-2. เปิดโฟลเดอร์ `JobMate_Package` ด้วย VS Code
+2. เปิดโฟลเดอร์ `JobMate_Assignment7_Package` ด้วย VS Code
 3. เปิด Terminal แล้วรัน `npm install`
 4. คัดลอก `.env.example` เป็น `.env.local`
 5. ใส่ค่า Firebase Web App config จาก Firebase Console ใน `.env.local`
-6. Import `JobMate_data.json` ใน Firebase Realtime Database โดยนำเข้าที่ root
+6. Import `jobmate_data.json` ใน Firebase Realtime Database โดยนำเข้าที่ root
 7. รัน `npm run dev`
 8. เปิด URL ที่ Vite แสดงใน Terminal
 

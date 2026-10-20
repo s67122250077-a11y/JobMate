@@ -1,0 +1,40 @@
+{
+  "app": "JobMate",
+  "navigation": {
+    "buttons": [
+      {
+        "id": "login_button",
+        "label": "เข้าสู่ระบบ",
+        "route": "/login",
+        "position": "header",
+        "visible_when": "logged_out",
+        "style": "primary"
+      }
+    ]
+  },
+  "routes": [
+    { "path": "/login", "component": "LoginPage", "public": true }
+  ],
+  "login_page": {
+    "title": "เข้าสู่ระบบ JobMate",
+    "subtitle": "เข้าสู่ระบบเพื่อใช้งาน JobMate",
+    "fields": [
+      { "name": "email", "label": "อีเมล", "type": "email", "required": true, "placeholder": "example@email.com" },
+      { "name": "password", "label": "รหัสผ่าน", "type": "password", "required": true, "placeholder": "กรอกรหัสผ่าน" }
+    ],
+    "submit_button": { "label": "เข้าสู่ระบบ", "action": "sign_in" },
+    "links": [
+      { "label": "ลืมรหัสผ่าน?", "route": "/forgot-password" },
+      { "label": "สมัครสมาชิก", "route": "/register" }
+    ]
+  },
+  "authentication": {
+    "provider": "Firebase Authentication",
+    "method": "email_password",
+    "enabled": false,
+    "note": "นี่เป็นไฟล์ตั้งค่าหน้าจอและปุ่มเท่านั้น ต้องเขียน React components, routing และเชื่อม Firebase Authentication จึงจะล็อกอินได้จริง"
+  },
+  "security": {
+    "password_storage": "Do not store passwords in JSON or Realtime Database"
+  }
+}

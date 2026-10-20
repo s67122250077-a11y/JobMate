@@ -6,6 +6,8 @@ import JobListPage from './pages/JobListPage.jsx'
 import JobDetailPage from './pages/JobDetailPage.jsx'
 import SavedJobsPage from './pages/SavedJobsPage.jsx'
 import ApplicationsPage from './pages/ApplicationsPage.jsx'
+import SurveyPage from './pages/SurveyPage.jsx'
+import LoginPage from './pages/LoginPage.jsx'
 function NotFound(){return <section className="page empty-state"><h1>ไม่พบหน้าที่ต้องการ</h1><a href="/">กลับหน้าหลัก</a></section>}
 export default function App(){
  const [savedIds,setSavedIds]=useState(()=>JSON.parse(localStorage.getItem('jobmate_saved_ids')||'[]'))
@@ -17,6 +19,8 @@ export default function App(){
   <Route path="/search" element={<JobListPage savedIds={savedIds} onToggleSave={onToggleSave}/>}/>
   <Route path="/saved-jobs" element={<SavedJobsPage savedIds={savedIds} onToggleSave={onToggleSave}/>}/>
   <Route path="/applications" element={<ApplicationsPage/>}/>
+  <Route path="/survey" element={<SurveyPage/>}/>
+  <Route path="/login" element={<LoginPage/>}/>
   <Route path="*" element={<NotFound/>}/>
  </Route></Routes>
 }

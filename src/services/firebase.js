@@ -1,5 +1,6 @@
-import { initializeApp } from 'firebase/app'
+import { initializeApp, getApps, getApp } from 'firebase/app'
 import { getDatabase } from 'firebase/database'
+import { getAuth } from 'firebase/auth'
 
 const config = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -8,8 +9,12 @@ const config = {
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 }
-const configured = Boolean(config.apiKey && config.databaseURL && config.projectId && config.appId)
-export const firebaseConfigured = configured
-export const db = configured ? getDatabase(initializeApp(config)) : null
+
+const appConfigured = Boolean(config.apiKey && config.projectId && config.appId)
+const app = appConfigured ? (getApps().length ? getApp() : initializeApp(config)) : null
+export const firebaseConfigured = Boolean(app && config.databaseURL)
+export const db = firebaseConfigured ? getDatabase(app) : null
+export const authConfigured = Boolean(app && config.authDomain)
+export const auth = authConfigured ? getAuth(app) : null

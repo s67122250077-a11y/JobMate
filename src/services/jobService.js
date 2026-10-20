@@ -1,6 +1,6 @@
 import { get, ref } from 'firebase/database'
 import { db, firebaseConfigured } from './firebase.js'
-import seed from '../../JobMate_data.json'
+import seed from '../../jobmate_data.json'
 
 export async function getJobs() {
   if (firebaseConfigured && db) {
